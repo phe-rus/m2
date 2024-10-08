@@ -1,17 +1,13 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import type { Metadata } from "next";
+import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Toaster } from '@/components/ui/sonner';
+import { ThemeProvider } from '@/components/blocks/theme-provider';
+import { TailwindIndicator } from '@/components/blocks/tailwind-indicator';
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,13 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head/>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <main>
-          <div className={'flex-1'}>{children}</div>
-        </main>
+      <head />
+      <body className={cn('h-screen bg-background font-sans antialiased',
+        GeistMono.variable, GeistSans.variable,
+      )}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main className={cn('relative flex min-h-screen flex-col')}>
+            <div className={'flex-1'}>{children}</div>
+            <Toaster />
+          </main>
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   );

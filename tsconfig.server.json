@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "module": "commonjs",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "outDir": ".next/server"
+  },
+  "include": ["./src/palette/**/*.ts"],
+  "exclude": [".next"]
+}

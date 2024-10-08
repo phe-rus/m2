@@ -1,0 +1,6 @@
+{
+  "watch": ["./src/palette"],
+  "ext": "ts,tsx",
+  "exec": "ts-node --project tsconfig.server.json ./src/palette/palette.ts",
+  "ignore": ["node_modules", "dist", "build"]
+}

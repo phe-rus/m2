@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2023",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,12 +13,15 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "outDir": "dist",
+    "sourceMap": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
+      "react": ["./node_modules/@types/react"],
       "@/*": ["./src/*"]
     }
   },
