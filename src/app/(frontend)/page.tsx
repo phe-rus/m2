@@ -1,9 +1,11 @@
-import { DataTableDemo } from "@/components/blocks/data-table"
+import { ThemeToggle } from "@/components/blocks/theme-toggle"
 import { Checkbox } from "@/components/ui/checkbox"
 
 export default function Home() {
   return (
     <section className="container flex flex-col items-center w-full">
+      <h1 className="text-3xl font-bold mb-4 mt-5">Home</h1>
+      <ThemeToggle />
       <div className="items-top flex space-x-2">
         <Checkbox id="terms1" />
         <div className="grid gap-1.5 leading-none">
@@ -18,7 +20,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <DataTableDemo />
     </section>
   )
 }
